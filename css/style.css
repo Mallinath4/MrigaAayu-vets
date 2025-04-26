@@ -11,6 +11,14 @@ img {
     height: auto;
 }
 
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
 /* Header styles */
 .header {
     display: flex;
@@ -19,16 +27,25 @@ img {
     padding: 5px 10px;
     background-color: #021d33;
     color: white;
-    position: relative;
+    position: fixed; /* for shrink effect */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease; /* for shrink */
 }
 
+/* Shrink header on scroll */
+.header.shrink {
+    padding: 2px 10px;
+}
+
+/* Navbar */
 .menu-toggle {
     display: none;
     font-size: 30px;
     cursor: pointer;
 }
 
-/* Navbar */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -38,95 +55,16 @@ img {
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-    border-radius: 5px;
-    font-size: 18px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-/* Hero section */
-.hero-content {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.hero-content h2 {
-    font-size: 2.5rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-}
-
-.hero-content button {
-    margin-top: 15px;
-    padding: 12px 25px;
-    background-color: #021d33;
+.navbar ul li a:hover {
+    background: #3498db;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
 }
 
-/* Grids */
-.service-items,
-.gallery-grid,
-.blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar {
-        display: none;
-        width: 100%;
-        background-color: #021d33;
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
-
-    .navbar.show {
-        display: block;
-    }
-
-    .logo {
-        width: 100px;
-    }
-
-    .clinic-title {
-        font-size: 24px;
-    }
-
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-}
-
-
-
-
-
-nav ul li a:hover {
-    background: #3498db; /* Change background on hover */
-    color: white; /* Ensure text remains visible */
-    transition: 0.3s;
-}
 /* Hero Section */
 #hero {
     position: relative;
@@ -140,7 +78,6 @@ nav ul li a:hover {
     color: white;
 }
 
-/* Background Image Slider */
 .hero-slider {
     position: absolute;
     top: 0;
@@ -153,7 +90,7 @@ nav ul li a:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
@@ -173,47 +110,45 @@ nav ul li a:hover {
 }
 
 .hero-content h2 {
-    font-weight: lighter;
+    font-weight: 1000;
     margin-bottom: 10px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-style: oblique;
     color: #2e3235;
-    font: 1000;
-
-
 }
 
 .hero-content p {
-    font-weight: lighter;
+    font-weight: 700;
     margin-bottom: 15px;
     font-style: oblique;
     color: #2e3235;
-    font: 700;
 }
 
 .hero-content button {
+    margin-top: 15px;
+    padding: 12px 25px;
     background: #655dc7;
     color: white;
-    padding: 12px 20px;
-    border: None;
-
+    border: none;
+    border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 .hero-content button:hover {
     background: #c44127;
 }
 
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+/* Grids */
+.service-items,
+.gallery-grid,
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
-
 
 /* Services Section */
 .container1 {
@@ -234,13 +169,6 @@ body {
     font-size: 18px;
     margin-bottom: 40px;
     color: #706f6f;
-}
-
-.service-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
 }
 
 .service-card {
@@ -283,22 +211,16 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 .read-more:hover {
     background: #0056b3;
 }
 
-
-
-
-
 /* Blog Section */
 .blog-posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two columns */
-    gap: 20px;
-    
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .blog-posts article {
@@ -332,19 +254,18 @@ body {
     color: #555;
 }
 
+/* Gallery Section */
 .gallery-container {
     width: 90%;
     margin: 20px auto;
 }
 
-/* Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
 
-/* Gallery Cards */
 .gallery-card {
     background: white;
     padding: 10px;
@@ -366,42 +287,40 @@ body {
     transform: scale(1.05);
 }
 
+/* Contact Section */
 .contact {
     padding: 5rem 10%;
     background: #f9f9f9;
     text-align: center;
+}
 
-  }
-  
-  .contact h2 {
+.contact h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: #666666;
-    
-  }
-  
-  .contact form {
+}
+
+.contact form {
     max-width: 800px;
     margin: auto;
-  }
-  
-  .input-box {
+}
+
+.input-box {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 1.5rem;
-  }
-  
-  .input-box input {
+}
+
+.input-box input {
     flex: 1 1 45%;
     padding: 1rem;
     border: 1px solid #030303;
     border-radius: 8px;
     color: #030303;
-    
-  }
-  
-  .contact textarea {
+}
+
+.contact textarea {
     width: 100%;
     padding: 1rem;
     border: 1px solid #030303;
@@ -409,9 +328,9 @@ body {
     resize: none;
     margin-bottom: 1.5rem;
     color: #030303;
-  }
-  
-  .contact .btn {
+}
+
+.contact .btn {
     background-color: #5aaf76;
     color: white;
     padding: 0.8rem 2rem;
@@ -420,15 +339,13 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .contact .btn:hover {
+}
+
+.contact .btn:hover {
     background-color: #4b9e68;
-  }
-  
+}
 
-
-
+/* Footer */
 footer {
     background-color: #021d33;
     color: white;
@@ -444,7 +361,7 @@ footer {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Adds spacing between icons */
+    gap: 15px;
 }
 
 .social-links li {
@@ -453,26 +370,70 @@ footer {
 
 .social-links a {
     color: white;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
     transition: color 0.3s ease-in-out;
 }
 
 .social-links a:hover {
-    color: #f39c12; /* Change to any hover color */
+    color: #f39c12;
 }
 
+/* Chat Button */
 .chat {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    background: white;
     border: none;
     border-radius: 50%;
     padding: 15px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.chat:hover {
+    transform: scale(1.1);
 }
 
 #chat-button img {
     width: 24px;
     height: 24px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        background-color: #021d33;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar.show {
+        display: block;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .clinic-title {
+        font-size: 24px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
