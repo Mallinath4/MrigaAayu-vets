@@ -1,79 +1,75 @@
-*{
+/* Basic reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
+/* Make images fully responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
+/* Header styles */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #021d33; /* Adjust color if needed */
-    padding: 5px 5px;
-}
-
-.logo-container {
-    height: 80%; /* Full height of header */
-    display: flex;
-    align-items: center;
-}
-
-.logo {
-    height: 80px; /* Stretch to fill the header */
-    width: 150px; /* Maintain aspect ratio */
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.navbar a {
+    padding: 5px 10px;
+    background-color: #021d33;
     color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
+    position: fixed; /* for shrink effect */
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease; /* for shrink */
 }
 
-.clinic-title {
-    position: absolute;
-    left: 24%;
-    transform: translateX(-50%);
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
+/* Shrink header on scroll */
+.header.shrink {
+    padding: 2px 10px;
 }
 
-nav ul {
+
+
+/* Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navbar ul {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
+.navbar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
 }
 
-nav ul li a:hover {
-    background: #3498db; /* Change background on hover */
-    color: white; /* Ensure text remains visible */
-    transition: 0.3s;
+.navbar ul li a:hover {
+    background: #3498db;
+    color: white;
 }
+
+
+
+
 .container1 {
     max-width: 1200px;
     margin: auto;
@@ -192,4 +188,39 @@ footer {
 #chat-button img {
     width: 24px;
     height: 24px;
+}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        background-color: #021d33;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar.show {
+        display: block;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .clinic-title {
+        font-size: 24px;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
