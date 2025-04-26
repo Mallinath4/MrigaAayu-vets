@@ -6,15 +6,16 @@
     <title>About Us | MrigaAayuvets</title>
     <link rel="stylesheet" href="css/about.css">
     <script>
-        // --- 👇 Move your menu-toggle code here ---
+    window.onload = function() {
         const menuToggle = document.getElementById('menu-toggle');
         const navbar = document.getElementById('navbar');
 
         menuToggle.addEventListener('click', () => {
             navbar.classList.toggle('show');
         });
-    
+    };
 </script>
+
 </head>
 <body>
     <header class="header">
