@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | MrigaAayuvets</title>
     <link rel="stylesheet" href="css/about.css">
+    <script>
+        // --- 👇 Move your menu-toggle code here ---
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+        });
+    
+</script>
 </head>
 <body>
     <header class="header">
@@ -12,6 +22,9 @@
             <img src="logo.png" alt="Veterinary Clinic Logo" class="logo">
         </div>
         <h1 class="clinic-title"> Home Veterinary Services</h1>
+         <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
         <nav class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
