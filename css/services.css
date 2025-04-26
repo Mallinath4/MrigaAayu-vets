@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #021d33; /* Adjust color if needed */
+    padding: 5px 5px;
+}
+
+.logo-container {
+    height: 80%; /* Full height of header */
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 80px; /* Stretch to fill the header */
+    width: 150px; /* Maintain aspect ratio */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.clinic-title {
+    position: absolute;
+    left: 24%;
+    transform: translateX(-50%);
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background: #3498db; /* Change background on hover */
+    color: white; /* Ensure text remains visible */
+    transition: 0.3s;
+}
+.container1 {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #666666;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #706f6f;
+}
+
+.service-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(2, 2, 2, 0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.read-more:hover {
+    background: #0056b3;
+}
+
+
+footer {
+    background-color: #021d33;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adds spacing between icons */
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px; /* Adjust size as needed */
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+    color: #f39c12; /* Change to any hover color */
+}
+
+.chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chat-button img {
+    width: 24px;
+    height: 24px;
+}
