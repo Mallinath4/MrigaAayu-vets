@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="css/blog.css">
     <script defer src="script.js"></script>
     <script>
-        // --- 👇 Move your menu-toggle code here ---
+    window.onload = function() {
         const menuToggle = document.getElementById('menu-toggle');
         const navbar = document.getElementById('navbar');
 
         menuToggle.addEventListener('click', () => {
             navbar.classList.toggle('show');
         });
-    
+    };
 </script>
+
 </head>
 <body>
     <header class="header">
