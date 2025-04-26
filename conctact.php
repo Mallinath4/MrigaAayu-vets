@@ -14,16 +14,19 @@
             <img src="logo (1).png" alt="Veterinary Clinic Logo" class="logo">
             </div>
             <h1 class="clinic-title">Veterinary Home Services</h1>
+         <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
             <nav class="navbar">
                 <ul>
-                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                 
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="blogs.html">Blogs</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="About.html">About</a></li>
                     <li><a href="conctact.html">Contact</a></li>
-                    <li><a href="#">Policies</a></li>
+                    
                 </ul>
             </nav>
         </div>
@@ -73,43 +76,3 @@
 
 </body>
 </html>
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-$host = "localhost"; // or your server IP
-$username = "root";  // your MySQL username
-$password = "Malluk@123";      // your MySQL password
-$database = "vet_clinic";
-
-// Create connection
-$conn = new mysqli($host, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Get data from form
-$full_name = $_POST['full_name'];
-$email = $_POST['email'];
-$mobile_number = $_POST['mobile_number'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
-
-// Insert into DB
-$sql = "INSERT INTO contact_form (full_name, email, mobile_number, subject, message)
-        VALUES (?, ?, ?, ?, ?)";
-
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("sssss", $full_name, $email, $mobile_number, $subject, $message);
-
-if ($stmt->execute()) {
-    echo "Thank you! Your message has been received.";
-} else {
-    echo "Error: " . $stmt->error;
-}
-
-$stmt->close();
-$conn->close();
-?>
