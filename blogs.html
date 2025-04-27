@@ -5,18 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | MrigaAayuvets</title>
     <link rel="stylesheet" href="css/blog.css">
-    <script defer src="script.js"></script>
-    <script>
-    window.onload = function() {
-        const menuToggle = document.getElementById('menu-toggle');
-        const navbar = document.getElementById('navbar');
-
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('show');
-        });
-    };
-</script>
-
+    
+    
+    
 </head>
 <body>
     <header class="header">
@@ -24,7 +15,7 @@
             <img src="logo (1).png" alt="Veterinary Clinic Logo" class="logo">
             </div>
             <h1 class="clinic-title">Veterinary Home Services</h1>
-         <div class="menu-toggle" id="menu-toggle">
+            <div class="menu-toggle" id="menu-toggle">
                 ☰
             </div>
             <nav class="navbar" id="navbar">
@@ -34,10 +25,9 @@
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="blogs.html">Blogs</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="conctact.html">Contact</a></li>
                     <li><a href="About.html">About</a></li>
+                    <li><a href="conctact.html">Contact</a></li>
                     
-              
                 </ul>
             </nav>
         </div>
@@ -116,5 +106,31 @@
             <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Icon" />
           </a>
        </div>
+       <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+    
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+    
+            // Optional: animate the toggle
+            if (navbar.classList.contains('show')) {
+                navbar.style.maxHeight = navbar.scrollHeight + "px";
+            } else {
+                navbar.style.maxHeight = "0";
+            }
+        });
+    
+        // Shrink header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+    </script>
 </body>
 </html>
