@@ -1,82 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
+/* Make images fully responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30px;
+    padding-top: 50px;
+    scroll-behavior:auto; /* Smooth scrolling */
+    color: rgb(24, 24, 24);
+    background-color: aliceblue;
+
+}
+
+/* Header styles */
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #021d33; /* Adjust color if needed */
-    padding: 5px 5px;
+    padding: 5px 10px;
+    background-color: #021d33;
+    color: white;
+    position: fixed; /* for shrink effect */
+    width: 100%;
+    height: 70px;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.3s ease; /* for shrink */
 }
 
+/* Shrink header on scroll */
+.header.shrink {
+    padding: 1px 8px;
+}
 .logo-container {
-    height: 80%; /* Full height of header */
+     /* Full height of header */
     display: flex;
     align-items: center;
 }
 
 .logo {
-    height: 80px; /* Stretch to fill the header */
+    height: 70px; /* Stretch to fill the header */
     width: 150px; /* Maintain aspect ratio */
 }
 
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+
+
+
+/* Navbar */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.clinic-title {
-    position: absolute;
-    left: 24%;
-    transform: translateX(-50%);
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-}
-
-nav ul {
+.navbar ul {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
+.navbar ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: color 0.5s ease-in-out, background 0.5s ease-in-out;
     padding: 10px 15px;
     border-radius: 5px;
 }
 
-nav ul li a:hover {
-    background: #3498db; /* Change background on hover */
-    color: white; /* Ensure text remains visible */
+.navbar ul li a:hover {
+    background: #3498db;
+    color: white;
     transition: 0.3s;
+}
+.hero{
+    text-align: center;
+    font-size: larger;
+    padding-top: 40px;
+    font-weight: 400px;
 }
 /* Gallery Container */
 .gallery-container {
     width: 90%;
-    margin: 20px auto;
+    margin: 20px auto ;
+    
 }
 
 /* Gallery Grid */
@@ -118,4 +136,64 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+@media (max-width: 768px) {
+   
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+        background-color: #021d33;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 40px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .navbar ul li a {
+        font-size: 28px;
+    }
+
+    .navbar.show {
+        display: flex;
+    }
+    .logo-container{
+        display: flex;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .clinic-title {
+        font-size: 24px;
+        right: 26%;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
 }
