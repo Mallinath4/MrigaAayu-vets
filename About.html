@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | MrigaAayuvets</title>
     <link rel="stylesheet" href="css/about.css">
-    <script>
-    window.onload = function() {
-        const menuToggle = document.getElementById('menu-toggle');
-        const navbar = document.getElementById('navbar');
-
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('show');
-        });
-    };
-</script>
-
+    
+    
 </head>
 <body>
     <header class="header">
@@ -23,39 +14,37 @@
             <img src="logo.png" alt="Veterinary Clinic Logo" class="logo">
         </div>
         <h1 class="clinic-title"> Home Veterinary Services</h1>
-         <div class="menu-toggle" id="menu-toggle">
-                ☰
-            </div>
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
         <nav class="navbar" id="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="conctact.html">Contact</a></li>
                 <li><a href="about.html" class="active">About</a></li>
-                
+                <li><a href="conctact.html">Contact</a></li>
                 
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <div class="overlay">
-            <h2>About Us</h2>
-            <p>Providing exceptional veterinary care for your beloved pets.</p>
-        </div>
+       
+           <h2>Welcome to MrigaAayuvets</h2>
+            
     </section>
 
     <main class="content">
         <section class="about-section">
             <div class="about-text">
-                <h2>Welcome to MrigaAayuvets</h2>
+                
                 <p>At MrigaAayuvets, we are dedicated to offering high-quality veterinary services with compassion. Our team consists of experienced professionals passionate about animal health.</p>
                 <p>From preventative care to emergency treatments, we ensure your pet gets the best care possible.</p>
             </div>
             <div class="about-image">
-                <img src="images/vet-clinic.jpg" alt="Veterinary Clinic">
+                <img src="image/slide6.jpeg" alt="Veterinary Clinic">
             </div>
         </section>
 
@@ -63,17 +52,17 @@
             <h2>How In-Home Veterinary Doctor Service Work?</h2>
             <div class="features-container">
                 <div class="feature-item">
-                    <img src="icons/home-visit.png" alt="Home Visit Icon">
+                    <img src="image/home.jpeg" alt="Home Visit Icon">
                     <h3>Stress-Free Home Visits</h3>
                     <p>Home comfort for happy pets! Keep your furry friends feeling safe and relaxed with our stress-free home vet visits.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="icons/multi-pet.png" alt="Multi-Pet Icon">
+                    <img src="image/multi.jpeg" alt="Multi-Pet Icon">
                     <h3>Multi-Pet Appointments</h3>
                     <p>One visit, whole pack care! Book a single at-home Vet visit, ensuring all your pets get the attention they need.</p>
                 </div>
                 <div class="feature-item">
-                    <img src="icons/booking.png" alt="Booking Icon">
+                    <img src="image/book1.png" alt="Booking Icon">
                     <h3>Easy Online Booking</h3>
                     <p>Your time, your choice! Pick a slot that suits your schedule, and let the Vet bring expert care to your doorstep.</p>
                 </div>
@@ -89,23 +78,19 @@
             <h2>Our Services</h2>
             <div class="services-list">
                 <div class="service-item">
-                    <img src="icons/home-visit.png" alt="Home Veterinary">
-                    <p>Home Veterinary Consultations</p>
-                </div>
-                <div class="service-item">
-                    <img src="icons/emergency-care.png" alt="Emergency">
+                    <img src="image/emergancy.png" alt="Emergency">
                     <p>Emergency Pet Care</p>
                 </div>
                 <div class="service-item">
-                    <img src="icons/vaccine.png" alt="Vaccinations">
+                    <img src="image/vaccine.png" alt="Vaccinations">
                     <p>Vaccinations & Preventive Care</p>
                 </div>
                 <div class="service-item">
-                    <img src="icons/surgery.png" alt="Surgery">
+                    <img src="image/surgery.png" alt="Surgery">
                     <p>Surgical Procedures</p>
                 </div>
                 <div class="service-item">
-                    <img src="icons/nutrition.png" alt="Nutrition">
+                    <img src="image/nutrication.png" alt="Nutrition">
                     <p>Pet Nutrition & Diet Plans</p>
                 </div>
             </div>
@@ -113,23 +98,15 @@
         
 
         <section class="team">
-            <h2>Meet Our Team</h2>
+            <h2>Meet Our Doctor</h2>
             <div class="team-container">
+                
                 <div class="team-member">
-                    <img src="images/vet1.jpg" alt="Dr. Prashant Khamgal">
-                    <h3>Dr. Prashant Khamgal</h3>
-                    <p>Chief Veterinarian</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/vet2.jpg" alt="Dr. Siddheshwar Khonde">
+                    <img src="image/siddhu.png" alt="Dr. Siddheshwar Khonde">
                     <h3>Dr. Siddheshwar Khonde</h3>
                     <p>Veterinary Surgeon</p>
                 </div>
-                <div class="team-member">
-                    <img src="images/vet3.jpg" alt="Dr. Nisarg">
-                    <h3>Dr. Nisarg</h3>
-                    <p>Animal Behavior Specialist</p>
-                </div>
+                
             </div>
         </section>
 
@@ -144,5 +121,31 @@
     <footer>
         <p>&copy; 2025 MrigaAayuvets. All rights reserved.</p>
     </footer>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+    
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('show');
+    
+            // Optional: animate the toggle
+            if (navbar.classList.contains('show')) {
+                navbar.style.maxHeight = navbar.scrollHeight + "px";
+            } else {
+                navbar.style.maxHeight = "0";
+            }
+        });
+    
+        // Shrink header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+    </script>
 </body>
 </html>
